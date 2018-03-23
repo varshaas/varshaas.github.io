@@ -11,21 +11,19 @@
 	</style>
 </head>
 <body>
-	<button type="button" class="btn" onclick="show('img1');" id="black">Black</button>
-	<button type="button" class="btn" onclick="show('img2');" id="blue">Blue</button>
-	<button type="button" class="btn" onclick="show('img3');" id="gold">Gold</button>
-	<button type="button" class="btn" onclick="show('img4');" id="rose-gold">Rose Gold</button>
+	<button type="button" class="btn" onclick="showImage('img1');" id="black">Black</button>
+	<button type="button" class="btn" onclick="showImage('img2');" id="blue">Blue</button>
+	<button type="button" class="btn" onclick="showImage('img3');" id="gold">Gold</button>
+	<button type="button" class="btn" onclick="showImage('img4');" id="rose-gold">Rose Gold</button>
 	<div id="img1" class="commonImg"></div>
 	<div id="img2" class="commonImg"></div>
 	<div id="img3" class="commonImg"></div>
 	<div id="img4" class="commonImg"></div>
 	<script type="text/javascript">
-		function show(id){
+		function showImage(id){
 			var image = document.getElementById(id);
-			var allButtons = document.getElementsByClassName("btn");
 			var allImages = document.getElementsByClassName("commonImg");
 			for (var i = 0; i < allImages.length; i++) {
-				// console.log(allImages[i]);
 				allImages[i].style.display = 'none';
 				if (image) {image.style.display = 'block';}
 			}
