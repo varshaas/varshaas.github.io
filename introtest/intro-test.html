@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js-test</title>
+	<style type="text/css">
+		#img1{background: url(images/black.jpeg) 0 0 no-repeat;}
+		#img2{background: url(images/blue.jpeg) 0 0 no-repeat;}
+		#img3{background: url(images/gold.jpeg) 0 0 no-repeat;}
+		#img4{background: url(images/rose-gold.jpeg) 0 0 no-repeat;}
+		.commonImg{width: 398px;height: 832px;margin: 0 auto;display: none;}
+	</style>
+</head>
+<body>
+	<button type="button" data-id="img1" class="btn" onclick="show('img1');" id="black">Black</button>
+	<button type="button" data-id="img2" class="btn" onclick="show('img2');" id="blue">Blue</button>
+	<button type="button" data-id="img3" class="btn" onclick="show('img3');" id="gold">Gold</button>
+	<button type="button" data-id="img4" class="btn" onclick="show('img4');" id="rose-gold">Rose Gold</button>
+	<div id="img1" class="commonImg"></div>
+	<div id="img2" class="commonImg"></div>
+	<div id="img3" class="commonImg"></div>
+	<div id="img4" class="commonImg"></div>
+	<script type="text/javascript">
+	function show(id){
+		var image = document.getElementById(id);  // get specific image id
+		var allImages = document.getElementsByClassName("commonImg");  // get all images
+		for (var i = 0; i < allImages.length; i++) { // loop through all images
+			allImages[i].style.display = 'none'; // hide all images by default
+			if (image) {image.style.display = 'block';} // display image if clicked id is same as image id
+		}
+		showButton(id); // function for button styling
+	}
+	function showButton(id){
+		var allButtons = document.getElementsByClassName("btn"); // get all buttons
+		for (var i = 0; i < allButtons.length; i++) { // loop through all buttons
+			var buttonId = allButtons[i].getAttribute('data-id'); // store data-id in var
+				allButtons[i].style.backgroundColor = ""; // set background color of button to default
+			if (buttonId == id) { // if data-id is same as image id change background color of button
+				allButtons[i].style.backgroundColor = "#fff";
+			}
+		}
+	}
+	</script>
+</body>
+</html>

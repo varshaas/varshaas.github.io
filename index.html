@@ -1,33 +1,41 @@
-<!DOCTYPE html>
+<!Doctype>
 <html>
 <head>
-	<title>js-test</title>
+	<title>JS Session Assignments</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<style type="text/css">
-		#img1{background: url(images/black.jpeg) 0 0 no-repeat;display: none;}
-		#img2{background: url(images/blue.jpeg) 0 0 no-repeat;display: none;}
-		#img3{background: url(images/gold.jpeg) 0 0 no-repeat;display: none;}
-		#img4{background: url(images/rose-gold.jpeg) 0 0 no-repeat;display: none;}
-		.common-img{width: 398px;height: 832px;margin: 0 auto;}
+		iframe{width: 100%; height: 100%; border: 0;}
+		.btn{display: block;}
 	</style>
 </head>
 <body>
-	<button type="button" class="btn" onclick="showImage('img1');" id="black">Black</button>
-	<button type="button" class="btn" onclick="showImage('img2');" id="blue">Blue</button>
-	<button type="button" class="btn" onclick="showImage('img3');" id="gold">Gold</button>
-	<button type="button" class="btn" onclick="showImage('img4');" id="rose-gold">Rose Gold</button>
-	<div id="img1" class="common-img"></div>
-	<div id="img2" class="common-img"></div>
-	<div id="img3" class="common-img"></div>
-	<div id="img4" class="common-img"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<h2>JS Assignments</h2>
+					<div class="col-xs-4 pull-left">
+						<button class="btn btn-primary" target="iframe_1">Intro Test</button>
+						<button class="btn btn-primary" target="iframe_2">Assignment 1</button>
+					</div>
+					<div class="col-xs-8 pull-right iframe-div">
+						<iframe id="iframe_1" src="intro-test.html" name="iframe_1" class="iframe"></iframe>
+						<iframe id="iframe_2" src="assignment1.html" name="iframe_2" class="iframe"></iframe> 
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
-		function showImage(id){
-			var image = document.getElementById(id);
-			var allImages = document.getElementsByClassName("common-img");
-			for (var i = 0; i < allImages.length; i++) {
-				allImages[i].style.display = 'none';
-				if (image) {image.style.display = 'block';}
-			}
-	}
+		$(document).ready(function(){
+			$('iframe').hide();
+			$('button').on('click',function(){
+				var currBtn = $(this).attr('target');
+				$(this).parent().siblings(".iframe-div").children('.iframe').not(currBtn).css("display", "none");
+				$('iframe#'+ currBtn).show(); 
+			});		
+		});
 	</script>
 </body>
 </html>
