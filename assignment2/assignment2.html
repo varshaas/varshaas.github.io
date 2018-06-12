@@ -1,9 +1,172 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Assignment2</title>
+	<title>Assignment 2</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<h2>Its Empty</h2>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h2>Assignment 2</h2>
+			<div class="panel panel-default">
+				<div class="panel-heading"><code>var counter = 0;</code>
+					<code>counter++; ++counter; alert( counter );</code><br>
+				What will alert this and why?</div>
+			  	<div class="panel-body">
+			    	<em>It will alert <code>2</code> as increament occurs twice brfore alert is given</em>
+			  	</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<code>var n = 2;</code>
+					<code>n *= 3 + 5; alert( n );</code><br>
+				What will alert this and why?</div>
+			  	<div class="panel-body">
+			    	<em>It will alert <code>16</code> as <code>+</code> operator takes precedence over <code>*=</code> operator. Hence the code becomes <code>n = n * (3 + 5)</code></em>
+			  	</div>
+			</div>	
+			<div class="panel panel-default">
+				<div class="panel-heading">What are the final values of all variables a, b, c and d after the code below?<br>
+					<code>var a = 1, b = 1;</code>
+					<code>var c = ++a;</code>
+					<code>var d = b++;</code>
+				</div>
+			  	<div class="panel-body">
+			    	<code>a = 2</code><br>
+					<code>b = 2</code><br>
+					<code>c = 2</code><br>
+					<code>d = 1</code>
+			  	</div>
+			</div>	
+			<div class="panel panel-default">
+				<div class="panel-heading">What are the values of a and x after the code below?<br>
+					<code>var a = 2;</code>
+					<code>var x = 1 + (a *= 2);</code>
+				</div>
+			  	<div class="panel-body">
+			    	<code>a = 4;</code><br>
+					<code>x = 5;</code>
+			  	</div>
+			</div>	
+			<div class="panel panel-default">
+				<div class="panel-heading">Find greatest among 4 numbers</div>
+			  	<div class="panel-body">
+			    	<code>var a = 12, b = 35, c = 4, d = 14;</code><br>
+					<code>if ((a>b) && (a>c) && (a>d)) {</code><br>
+					<code>&nbsp; document.write("a is greater");</code><br>
+					<code>}else if ((b>a) && (b>c) && (b>d)) {</code><br>
+					<code>&nbsp; document.write("b is greater");</code><br>
+					<code>}else if ((c>a) && (c>b) && (c>d)) {</code><br>
+					<code>&nbsp; document.write("c is greater");</code><br>
+					<code>}else{</code><br>
+					<code>&nbsp; document.write("d is greater");</code><br>
+					<code>}</code>
+			  	</div>
+			</div>		
+			<div class="panel panel-default">
+				<div class="panel-heading">Rewrite this if using the ternary operator '?':<br>
+					<code>if (a + b < 4) { result = 'Below'; } else { result = 'Over'; }</code></div>
+			  	<div class="panel-body">
+			    	<code>if (a + b < 4) ? 'Below' : 'Over'</code>
+			  	</div>
+			</div>		
+			<div class="panel panel-default">
+				<div class="panel-heading">Rewrite following to switch<br>
+					<code>var a = +prompt('a?', ''); </code><br>
+					<code>if (a == 0) { alert( 0 ); } </code><br>
+					<code>if (a == 1) { alert( 1 ); } </code><br>
+					<code>if (a == 2 || a == 3) { alert( '2,3' ); }</code>					
+				</div>
+			  	<div class="panel-body">
+			    	<code>var a = +prompt('a?', '');</code><br>
+					<code>switch(a){</code><br>
+					<code>&nbsp; case 0:</code><br>
+					<code>&nbsp; &nbsp; alert( 0 );</code><br>
+					<code>&nbsp; &nbsp; break;</code><br>
+					<code>&nbsp; case 1:</code><br>
+					<code>&nbsp; &nbsp; alert( 1 );</code><br>
+					<code>&nbsp; &nbsp; break;</code><br>
+					<code>&nbsp; case ( 2 || 3):</code><br>
+					<code>&nbsp; &nbsp; alert( '2,3' );</code><br>
+					<code>&nbsp; break;</code><br>
+					<code>}</code>
+			  	</div>
+			</div>			
+			<div class="panel panel-default">
+				<div class="panel-heading">Write a condition to check if the given age is of a teenager or no.</div>
+			  	<div class="panel-body">
+			    	<code>var age = prompt('Please enter age', ''); </code><br>
+					<code>if (age <= 18) {</code><br>
+					<code>&nbsp;alert( "You're a teenager" );</code><br>
+					<code>}else{</code><br>
+					<code>&nbsp;alert( "You're NOT a teenager" );</code><br>
+					<code>}</code>
+			  	</div>
+			</div>			
+		</div>		
+			<div class="panel panel-default">
+				<div class="panel-heading">Print/alert todays Day using switch &amp; if-else. Also print a message saying “It is a weekend” if Saturday or Sunday! or be creative.</div>
+			  	<div class="panel-body">
+			  		<em>Using Switch Case:</em><br>
+			    	<code>var day;</code><br>
+			    	<code>switch (new Date().getDay()) {</code><br>
+					<code>&nbsp;case 0:</code><br>
+					<code>&nbsp;&nbsp;day = "It's Sunday and a Weekend!!";</code><br>
+					<code>&nbsp;&nbsp;break;</code><br>
+					<code>&nbsp;case 1:</code><br>
+					<code>&nbsp;&nbsp;day = "It's Monday";</code><br>
+					<code>&nbsp;&nbsp;break;</code><br>
+					<code>&nbsp;case 2:</code><br>
+					<code>&nbsp;&nbsp;day = "It's Tuesday";</code><br>
+					<code>&nbsp;&nbsp;break;</code><br>
+					<code>&nbsp;case 3:</code><br>
+					<code>&nbsp;&nbsp;day = "It's Wednesday";</code><br>
+					<code>&nbsp;&nbsp;break;</code><br>
+					<code>&nbsp;case 4:</code><br>
+					<code>&nbsp;&nbsp;day = "It's Thursday";</code><br>
+					<code>&nbsp;&nbsp;break;</code><br>
+					<code>&nbsp;case 5:</code><br>
+					<code>&nbsp;&nbsp;day = "It's Friday";</code><br>
+					<code>&nbsp;&nbsp;break;</code><br>
+					<code>&nbsp;case 6:</code><br>
+					<code>&nbsp;&nbsp;day = "It's Saturday and a Weekend!!";</code><br>
+					<code>}</code><br><br>
+					<em>Using If-else</em><br>
+					<code>var today = new Date().getDay();</code><br>
+					<code>if (today == 0) {</code><br>
+					<code>&nbsp;document.write( "Its Sunday! Happy Weekends!!" );</code><br>
+					<code>}else if (today == 1){</code><br>
+					<code>&nbsp;document.write( "Its Monday!" );</code><br>
+					<code>} else if (today == 2){</code><br>
+					<code>&nbsp;document.write( "Its Tuesday!" );</code><br>
+					<code>} else if (today == 3){</code><br>
+					<code>&nbsp;document.write( "Its Wednsday!" );</code><br>
+					<code>} else if (today == 4){</code><br>
+					<code>&nbsp;document.write( "Its Thursday!" );</code><br>
+					<code>} else if (today == 5){</code><br>
+					<code>&nbsp;document.write( "Its Friday!" );</code><br>
+					<code>} else{</code><br>
+					<code>&nbsp;document.write( "Its Saturday! Happy Weekends!!" );</code><br>
+					<code>}</code>
+			  	</div>
+			</div>			
+		</div>		
+			<div class="panel panel-default">
+				<div class="panel-heading">Set the color (yellow:morning, blue:evening, black:night) of body tag based on your system time. showcase your creativity.</div>
+			  	<div class="panel-body">
+			    	<code>var todayTime = new Date().getHours();</code><br>
+					<code>if (todayTime <= 12 && todayTime >= 6) {</code><br>
+					<code>&nbsp;document.body.style.backgroundColor = "yellow";</code><br>
+					<code>}else if (todayTime <= 19 && todayTime >= 13){</code><br>
+					<code>&nbsp;document.body.style.backgroundColor = "blue";</code><br>
+					<code>}else{</code><br>
+					<code>&nbsp;document.body.style.backgroundColor = "black";</code><br>
+					<code>}</code><br>
+			  	</div>
+			</div>			
+		</div>
+	</div>
+</div>
 </body>
 </html>
